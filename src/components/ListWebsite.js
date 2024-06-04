@@ -1,28 +1,6 @@
 import {ScrollView, StyleSheet, Text, View} from "react-native";
 import React from "react";
-
-const websites = [
-    { websiteName: 'Google', websiteStatus: 'Online' },
-    { websiteName: 'Facebook', websiteStatus: 'Online' },
-    { websiteName: 'Twitter', websiteStatus: 'Offline' },
-    { websiteName: 'LinkedIn', websiteStatus: 'Online' },
-    { websiteName: 'Google', websiteStatus: 'Online' },
-    { websiteName: 'Facebook', websiteStatus: 'Online' },
-    { websiteName: 'Twitter', websiteStatus: 'Offline' },
-    { websiteName: 'LinkedIn', websiteStatus: 'Online' },
-    { websiteName: 'Google', websiteStatus: 'Online' },
-    { websiteName: 'Facebook', websiteStatus: 'Online' },
-    { websiteName: 'Twitter', websiteStatus: 'Offline' },
-    { websiteName: 'LinkedIn', websiteStatus: 'Online' },
-    { websiteName: 'Google', websiteStatus: 'Online' },
-    { websiteName: 'Facebook', websiteStatus: 'Online' },
-    { websiteName: 'Twitter', websiteStatus: 'Offline' },
-    { websiteName: 'LinkedIn', websiteStatus: 'Online' },
-    { websiteName: 'Google', websiteStatus: 'Online' },
-    { websiteName: 'Facebook', websiteStatus: 'Online' },
-    { websiteName: 'Twitter', websiteStatus: 'Offline' },
-    { websiteName: 'LinkedIn', websiteStatus: 'Online' },
-];
+import {websites} from "../constants/Websites";
 
 const ListWebsite = () => {
     return (
@@ -30,10 +8,10 @@ const ListWebsite = () => {
             {websites.map((website, index) => (
                 <View key={index} style={styles.websiteContainer}>
                     <Text style={styles.websiteName}>
-                        {website.websiteName}
+                        {website.name}
                     </Text>
-                    <Text style={[styles.websiteStatus, website.websiteStatus === 'Online' ? {color:'green'} : {color:'red'}]}>
-                        {website.websiteStatus}
+                    <Text style={[styles.websiteStatus, website.status ? {color:'green'} : {color:'red'}]}>
+                        {website.status ? 'Online' : 'Offline'}
                     </Text>
                 </View>
             ))}

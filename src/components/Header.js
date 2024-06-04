@@ -1,10 +1,12 @@
 import {StyleSheet, Text, View} from "react-native";
-import React from "react";
+import React  from "react";
+import Timer from "./Timer";
 
 const Header = () => {
     return (
         <View style={styles.header}>
-            <Text style={styles.headerText}>Website checker</Text>
+            <Text style={styles.headerText}>Website checker </Text>
+            <Timer/>
         </View>
     );
 };
