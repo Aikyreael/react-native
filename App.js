@@ -6,29 +6,29 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
-import Footer from "./src/components/Footer";
-import Header from "./src/components/Header";
-import ListWebsite from "./src/components/ListWebsite";
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Home from "./src/components/Home";
+import Detail from "./src/components/Detail";
+
+
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <SafeAreaView style={styles.container}>
-        <Header/>
-        <ListWebsite/>
-        <Footer/>
-    </SafeAreaView>
+      <NavigationContainer>
+          <Stack.Navigator>
+              <Stack.Screen
+                  name="Home"
+                  component={Home}
+              />
+              <Stack.Screen
+                  name="Detail"
+                  component={Detail}
+              />
+          </Stack.Navigator>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  }
-});
 
 export default App;
